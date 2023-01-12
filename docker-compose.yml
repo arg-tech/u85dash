@@ -1,10 +1,10 @@
 version: '3.0'
 services:
   php:
-    # image: php:7.2-apache # remember to comment this line
-    container_name: php8.0-apache
+    container_name: u85dash
     build: .
     ports:
       - 8000:80
     volumes:
-      - .:/var/www/html/
+      - ./:/var/www/html/
+      - /u85dash/var/www/html/node_modules
