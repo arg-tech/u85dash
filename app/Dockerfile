@@ -9,3 +9,5 @@ RUN apt-get update && apt-get upgrade -y && \
     npm
 
 RUN npm install
+
+COPY . ./

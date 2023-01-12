@@ -2,9 +2,9 @@ version: '3.0'
 services:
   php:
     container_name: u85dash
-    build: .
+    build: ./app
     ports:
       - 8000:80
     volumes:
-      - ./:/var/www/html/
-      - /u85dash/var/www/html/node_modules
+      - ./app:/var/www/html/
+      - /var/www/html/node_modules
