@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="node_modules/bootstrap-icons/font/bootstrap-icons.css">
     <title>Document</title>
 </head>
 <body>
@@ -40,33 +41,50 @@
     <div class="container pt-5" style="height: 100vh;">
         <div class="row">
             <div class="col">
+                <!-- View Data Card -->
                 <div class="card mx-auto" id="view-data" style="width: 12rem; height: 10rem;">
                     <div class="card-body">
+                        <i class="bi bi-info-circle float-end" style="position: relative; left: 2.5rem; bottom: 2.5rem"></i>
                         <h5 class="card-title text-center">View Data</h5>
                     </div>
                 </div>
             </div>
             <div class="col">
+                <!-- View AIF Card -->
                 <div class="card mx-auto" id="view-aif" style="width: 12rem; height: 10rem;">
                     <div class="card-body">
-                        <h5 class="card-title text-center">View Data</h5>
+                        <i class="bi bi-info-circle float-end" style="position: relative; left: 2.5rem; bottom: 2.5rem"></i>
+                        <h5 class="card-title text-center my-auto">View AIF</h5>
                     </div>
                 </div>
             </div>
             <div class="col">
+                <!-- Visualize Card -->
                 <div class="card mx-auto" id="visualize" style="width: 12rem; height: 10rem;">
                     <div class="card-body">
-                        <h5 class="card-title text-center">View Data</h5>
+                        <i class="bi bi-info-circle float-end" style="position: relative; left: 2.5rem; bottom: 2.5rem"></i>
+                        <h5 class="card-title text-center">Visualize</h5>
                     </div>
                 </div>
+                <!-- Analytics Card -->
+                <div class="card mx-auto mt-5" id="analytics" style="width: 12rem; height: 5rem;">
+                    <div class="card-body">
+                        <i class="bi bi-info-circle float-end" style="position: relative; left: 2.5rem; bottom: 2.5rem"></i>
+                        <h5 class="card-title text-center">Analytics</h5>
+                    </div>
+                </div>
+                <!-- Interrogate Card -->
                 <div class="card mx-auto mt-5" id="interrogate" style="width: 12rem; height: 10rem;">
                     <div class="card-body">
-                        <h5 class="card-title text-center">View Data</h5>
+                        <i class="bi bi-info-circle float-end" style="position: relative; left: 2.5rem; bottom: 2.5rem"></i>
+                        <h5 class="card-title text-center">Interrogate</h5>
                     </div>
                 </div>
+                <!-- Critique Card -->
                 <div class="card mx-auto mt-5" id="critique" style="width: 12rem; height: 10rem;">
                     <div class="card-body">
-                        <h5 class="card-title text-center">View Data</h5>
+                        <i class="bi bi-info-circle float-end" style="position: relative; left: 2.5rem; bottom: 2.5rem"></i>
+                        <h5 class="card-title text-center">Critique</h5>
                     </div>
                 </div>
             </div>
