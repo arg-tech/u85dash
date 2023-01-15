@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/custom.css">
+    <!-- Library CSS -->
     <link rel="stylesheet" href="node_modules/bootstrap-icons/font/bootstrap-icons.css">
     <title>Document</title>
 </head>
@@ -42,49 +44,61 @@
         <div class="row">
             <div class="col">
                 <!-- View Data Card -->
-                <div class="card mx-auto" id="view-data" style="width: 12rem; height: 10rem;">
+                <div class="card bg-secondary text-white mx-auto" id="view-data" style="width: 12rem; height: 10rem;">
                     <div class="card-body">
-                        <i class="bi bi-info-circle float-end" style="position: relative; left: 2.5rem; bottom: 2.5rem"></i>
-                        <h5 class="card-title text-center">View Data</h5>
+                        <i class="bi text-dark bi-info-circle float-end" style="position: relative; left: 2.5rem; bottom: 2.5rem"></i>
+                        <div class="d-flex justify-content-center" style="position: absolute; right: 0; left: 0; bottom: 0; top: 0;">
+                            <h5 class="card-title primary my-auto">View Data</h5>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="col">
                 <!-- View AIF Card -->
-                <div class="card mx-auto" id="view-aif" style="width: 12rem; height: 10rem;">
+                <div class="card bg-secondary text-white mx-auto" id="view-aif" style="width: 12rem; height: 10rem;">
                     <div class="card-body">
-                        <i class="bi bi-info-circle float-end" style="position: relative; left: 2.5rem; bottom: 2.5rem"></i>
-                        <h5 class="card-title text-center my-auto">View AIF</h5>
+                        <i class="bi text-dark bi-info-circle float-end" style="position: relative; left: 2.5rem; bottom: 2.5rem"></i>
+                        <div class="d-flex justify-content-center" style="position: absolute; right: 0; left: 0; bottom: 0; top: 0;">
+                            <h5 class="card-title my-auto">View AIF</h5>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="col">
                 <!-- Visualize Card -->
-                <div class="card mx-auto" id="visualize" style="width: 12rem; height: 10rem;">
+                <div class="card bg-secondary text-white mx-auto" id="visualize" style="width: 12rem; height: 10rem;">
                     <div class="card-body">
-                        <i class="bi bi-info-circle float-end" style="position: relative; left: 2.5rem; bottom: 2.5rem"></i>
-                        <h5 class="card-title text-center">Visualize</h5>
+                        <i class="bi text-dark bi-info-circle float-end" style="position: relative; left: 2.5rem; bottom: 2.5rem"></i>
+                        <div class="d-flex justify-content-center" style="position: absolute; right: 0; left: 0; bottom: 0; top: 0;">
+                            <h5 class="card-title my-auto">Arg-Nav</h5>
+                        </div>
                     </div>
                 </div>
                 <!-- Analytics Card -->
-                <div class="card mx-auto mt-5" id="analytics" style="width: 12rem; height: 5rem;">
+                <div class="card bg-secondary text-white mx-auto mt-5" id="analytics" style="width: 12rem; height: 5rem;">
                     <div class="card-body">
-                        <i class="bi bi-info-circle float-end" style="position: relative; left: 2.5rem; bottom: 2.5rem"></i>
-                        <h5 class="card-title text-center">Analytics</h5>
+                        <i class="bi text-dark bi-info-circle float-end" style="position: relative; left: 2.5rem; bottom: 2.5rem"></i>
+                        <div class="d-flex justify-content-center" style="position: absolute; right: 0; left: 0; bottom: 0; top: 0;">
+                            <h5 class="card-title my-auto">Analytics</h5>
+                        </div>
                     </div>
                 </div>
                 <!-- Interrogate Card -->
-                <div class="card mx-auto mt-5" id="interrogate" style="width: 12rem; height: 10rem;">
+                <div class="card bg-secondary text-white mx-auto mt-5" id="interrogate" style="width: 12rem; height: 10rem;">
                     <div class="card-body">
-                        <i class="bi bi-info-circle float-end" style="position: relative; left: 2.5rem; bottom: 2.5rem"></i>
-                        <h5 class="card-title text-center">Interrogate</h5>
+                        <i class="bi text-dark bi-info-circle float-end" style="position: relative; left: 2.5rem; bottom: 2.5rem"></i>
+                        <div class="d-flex justify-content-center" style="position: absolute; right: 0; left: 0; bottom: 0; top: 0;">
+                            <h5 class="card-title my-auto">Ach-Nav</h5>
+                        </div>
                     </div>
                 </div>
                 <!-- Critique Card -->
-                <div class="card mx-auto mt-5" id="critique" style="width: 12rem; height: 10rem;">
+                <div class="card bg-secondary text-white mx-auto mt-5" id="critique" style="width: 12rem; height: 10rem;">
                     <div class="card-body">
-                        <i class="bi bi-info-circle float-end" style="position: relative; left: 2.5rem; bottom: 2.5rem"></i>
-                        <h5 class="card-title text-center">Critique</h5>
+                        <i class="bi text-dark bi-info-circle float-end" style="position: relative; left: 2.5rem; bottom: 2.5rem"></i>
+                        <div class="d-flex justify-content-center" style="position: absolute; right: 0; left: 0; bottom: 0; top: 0;">
+                            <h5 class="card-title my-auto">Critique Player</h5>
+                        </div>
                     </div>
                 </div>
             </div>
