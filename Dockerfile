@@ -2,7 +2,7 @@ FROM php:8.0-apache
 
 WORKDIR /var/www/html
 
-COPY package.json .
+COPY src/package.json .
 
 RUN apt-get update && apt-get upgrade -y && \
     apt-get install -y nodejs \
@@ -10,4 +10,4 @@ RUN apt-get update && apt-get upgrade -y && \
 
 RUN npm install
 
-COPY . ./
+COPY ./src ./
