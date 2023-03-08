@@ -22,76 +22,75 @@
             <a class="navbar-brand" href="#">
                 <img src="https://arg-tech.org/wp-content/themes/arg/images/arg-tech-w-s.png" height="34px" class="" alt="">
             </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
         </div>
     </nav>
 
     <!-- Content -->
-    <div class="container pt-5" style="height: 100vh;">
-        <div class="row">
-            <div class="col d-flex">
+    <div class="container d-flex flex-column flex-md-row justify-content-md-between pt-5" style="min-height: 100vh;">
+        <div class="flex-column align-self-center">
+            <div class="align-self-center mx-auto" style="min-width: 12rem">
                 <!-- View Data Card -->
-                <div class="card bg-secondary text-white mx-auto align-self-center" style="width: 12rem; height: 8rem;">
+                <a href="#" class="card bg-secondary text-white">
                     <div class="card-body">
-                        <i class="bi fs-5 text-dark bi-info-circle float-end" id="view-data-popover" tabindex="0" role="button" data-bs-trigger="hover focus" data-bs-toggle="popover" style="position: relative; left: 2.5rem; bottom: 2.5rem"></i>
+                        <i class="bi fs-5 text-dark bi-info-circle float-end info" id="view-data-popover" tabindex="0" role="button" data-bs-trigger="hover focus" data-bs-toggle="popover"></i>
                         <div class="d-flex justify-content-center" id="view-data" style="position: absolute; right: 0; left: 0; bottom: 0; top: 0;">
                             <h5 class="card-title primary my-auto">Raw Data</h5>
                         </div>
                     </div>
-                </div>
+                </a>
             </div>
-            <div class="col d-flex">
+        </div>
+        <div class="flex-column align-self-center">
+            <div class="mx-auto" style="min-width: 12rem">
                 <!-- View AIF Card -->
-                <div class="card bg-secondary text-white mx-auto align-self-center" style="width: 12rem; height: 8rem;">
+                <a href="#" class="card bg-secondary text-white mt-5 mt-md-0">
                     <div class="card-body">
-                        <i class="bi fs-5 text-dark bi-info-circle float-end" id="view-aif-popover" tabindex="0" role="button" data-bs-trigger="hover focus" data-bs-toggle="popover" style="position: relative; left: 2.5rem; bottom: 2.5rem"></i>
+                        <i class="bi fs-5 text-dark bi-info-circle float-end info" id="view-aif-popover" tabindex="0" role="button" data-bs-trigger="hover focus" data-bs-toggle="popover"></i>
                         <div class="d-flex justify-content-center" id="view-aif" style="position: absolute; right: 0; left: 0; bottom: 0; top: 0;">
                             <h5 class="card-title my-auto">AIF</h5>
                         </div>
                     </div>
-                </div>
+                </a>
             </div>
-            <div class="col d-flex">
-                <div class="align-self-center mx-auto">
-                    <!-- Visualize Card -->
-                    <div class="card bg-secondary text-white mx-auto" style="width: 12rem; height: 8rem;">
-                        <div class="card-body">
-                            <i class="bi fs-5 text-dark bi-info-circle float-end" id="arg-nav-popover" tabindex="0" role="button" data-bs-trigger="hover focus" data-bs-toggle="popover" title="Default: Html inside popover" style="position: relative; left: 2.5rem; bottom: 2.5rem"></i>
-                            <div class="d-flex justify-content-center" id="visualize" style="position: absolute; right: 0; left: 0; bottom: 0; top: 0;">
-                                <h5 class="card-title my-auto">Arg-Nav</h5>
-                            </div>
+        </div>
+        <div class="flex-column align-self-center">
+            <div class="align-self-center mx-auto" style="min-width: 12rem">
+                <!-- Visualize Card -->
+                <a href="http://localhost:8181/results?text=test&iat_mode=false" class="card bg-secondary text-white mx-auto mt-5 mt-md-0">
+                    <div class="card-body">
+                        <i class="bi fs-5 text-dark bi-info-circle float-end info" id="arg-nav-popover" tabindex="0" role="button" data-bs-trigger="hover focus" data-bs-toggle="popover" title="Default: Html inside popover"></i>
+                        <div class="d-flex justify-content-center" id="visualize" style="position: absolute; right: 0; left: 0; bottom: 0; top: 0;">
+                            <h5 class="card-title my-auto">Arg-Nav</h5>
                         </div>
                     </div>
-                    <!-- Analytics Card -->
-                    <div class="card bg-secondary text-white mx-auto mt-5" style="width: 12rem; height: 8rem;">
-                        <div class="card-body">
-                            <i class="bi fs-5 text-dark bi-info-circle float-end" id="analytics-popover" tabindex="0" role="button" data-bs-trigger="hover focus" data-bs-toggle="popover" title="Default: Html inside popover" style="position: relative; left: 2.5rem; bottom: 2.5rem"></i>
-                            <div class="d-flex justify-content-center" id="analytics" style="position: absolute; right: 0; left: 0; bottom: 0; top: 0;">
-                                <h5 class="card-title my-auto">OVA3</h5>
-                            </div>
+                </a>
+                <!-- Analytics Card -->
+                <a href="#" class="card bg-secondary text-white mx-auto mt-5 mt-md-5">
+                    <div class="card-body">
+                        <i class="bi fs-5 text-dark bi-info-circle float-end info" id="analytics-popover" tabindex="0" role="button" data-bs-trigger="hover focus" data-bs-toggle="popover" title="Default: Html inside popover"></i>
+                        <div class="d-flex justify-content-center" id="analytics" style="position: absolute; right: 0; left: 0; bottom: 0; top: 0;">
+                            <h5 class="card-title my-auto">OVA3</h5>
                         </div>
                     </div>
-                    <!-- Interrogate Card -->
-                    <div class="card bg-secondary text-white mx-auto mt-5" style="width: 12rem; height: 8rem;">
-                        <div class="card-body">
-                            <i class="bi fs-5 text-dark bi-info-circle float-end" id="ach-nav-popover" tabindex="0" role="button" data-bs-trigger="hover focus" data-bs-toggle="popover" title="Default: Html inside popover" style="position: relative; left: 2.5rem; bottom: 2.5rem"></i>
-                            <div class="d-flex justify-content-center" id="interrogate" style="position: absolute; right: 0; left: 0; bottom: 0; top: 0;">
-                                <h5 class="card-title my-auto">Ach-Nav</h5>
-                            </div>
+                </a>
+                <!-- Interrogate Card -->
+                <a href="#" class="card bg-secondary text-white mx-auto mt-5 mt-md-5">
+                    <div class="card-body">
+                        <i class="bi fs-5 text-dark bi-info-circle float-end info" id="ach-nav-popover" tabindex="0" role="button" data-bs-trigger="hover focus" data-bs-toggle="popover" title="Default: Html inside popover"></i>
+                        <div class="d-flex justify-content-center" id="interrogate" style="position: absolute; right: 0; left: 0; bottom: 0; top: 0;">
+                            <h5 class="card-title my-auto">Ach-Nav</h5>
                         </div>
                     </div>
-                    <!-- Critique Card -->
-                    <div class="card bg-secondary text-white mx-auto mt-5" style="width: 12rem; height: 8rem;">
-                        <div class="card-body">
-                            <i class="bi fs-5 text-dark bi-info-circle float-end" id="critique-popover" tabindex="0" role="button" data-bs-trigger="hover focus" data-bs-toggle="popover" title="Default: Html inside popover" style="position: relative; left: 2.5rem; bottom: 2.5rem"></i>
-                            <div class="d-flex justify-content-center" id="critique" style="position: absolute; right: 0; left: 0; bottom: 0; top: 0;">
-                                <h5 class="card-title my-auto">Critique Player</h5>
-                            </div>
+                </a>
+                <!-- Critique Card -->
+                <a href="#" class="card bg-secondary text-white mx-auto my-5 mt-md-5">
+                    <div class="card-body">
+                        <i class="bi fs-5 text-dark bi-info-circle float-end info" id="critique-popover" tabindex="0" role="button" data-bs-trigger="hover focus" data-bs-toggle="popover" title="Default: Html inside popover"></i>
+                        <div class="d-flex justify-content-center" id="critique" style="position: absolute; right: 0; left: 0; bottom: 0; top: 0;">
+                            <h5 class="card-title my-auto">Critique Player</h5>
                         </div>
                     </div>
-                </div>
+                </a>
             </div>
         </div>
     </div> 
