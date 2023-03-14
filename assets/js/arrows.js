@@ -1,5 +1,15 @@
-function renderArrows()
+// Store state of ui
+// - is collapsed or not
+// Check if ui has changed beyond breakpoitn
+// If it has reached new breakpoitn
+// Re-render
+
+function evalArrows()
 {
+    // Bools for state
+    // False = not collapsed
+    collapse = false;
+
     // LeaderLine elements
     raw = document.getElementById('view-data');
     aif = document.getElementById('view-aif');
@@ -13,6 +23,15 @@ function renderArrows()
 
     if (window.innerWidth <= 768)
     {
+        collapse = true;
+    }
+    else
+    {
+        collapse = false;
+    }
+
+    if (collapse == true)
+    {
         // Create line
         rawToAif = new LeaderLine(
             raw,
@@ -23,29 +42,28 @@ function renderArrows()
         aifToVisualize = new LeaderLine(
             aif,
             LeaderLine.pointAnchor(visualize, {x: '100%', y: '50%'}),
-            {dash: {animation: true}, startSocket: 'right', endSocket: 'right', size: 6, animOptions: { duration: 'ease-in-out' }, hide: true, middleLabel: LeaderLine.pathLabel('Convert to AIF')}
+            {dash: {animation: true}, startSocket: 'right', endSocket: 'right', size: 6, animOptions: { duration: 'ease-in-out' }, hide: true, middleLabel: LeaderLine.pathLabel('Visualize Arguments')}
         );
 
         aifToAnalytics = new LeaderLine(
             aif,
-            LeaderLine.pointAnchor(analytics, {x: '100%', y: '50%'}),
-            {dash: {animation: true}, startSocket: 'right', endSocket: 'right', size: 6, animOptions: { duration: 'ease-in-out' }, hide: true, middleLabel: LeaderLine.pathLabel('Convert to AIF'), startSocketGravity: [200, 0]}
+            LeaderLine.pointAnchor(analytics, {x: '0%', y: '50%'}),
+            {dash: {animation: true}, startSocket: 'left', endSocket: 'left', size: 6, animOptions: { duration: 'ease-in-out' }, hide: true, middleLabel: LeaderLine.pathLabel('Perform Analysis')}
         );
 
         aifToInterrogate = new LeaderLine(
             aif,
-            LeaderLine.pointAnchor(interrogate, {x: '0%', y: '50%'}),
-            {dash: {animation: true}, startSocket: 'left', endSocket: 'left', size: 6, animOptions: { duration: 'ease-in-out' }, hide: true, middleLabel: LeaderLine.pathLabel('Convert to AIF')}
+            LeaderLine.pointAnchor(interrogate, {x: '100%', y: '50%'}),
+            {dash: {animation: true}, startSocket: 'right', endSocket: 'right', size: 6, animOptions: { duration: 'ease-in-out' }, hide: true, middleLabel: LeaderLine.pathLabel('Interrogate Hypothesis'), startSocketGravity: [200, 0]}
         );
 
         aifToCritique = new LeaderLine(
             aif,
             LeaderLine.pointAnchor(critique, {x: '0%', y: '50%'}),
-            {dash: {animation: true}, startSocket: 'left', endSocket: 'left', size: 6, animOptions: { duration: 'ease-in-out' }, hide: true, middleLabel: LeaderLine.pathLabel('Convert to AIF'), startSocketGravity: [-200, 0]}
+            {dash: {animation: true}, startSocket: 'left', endSocket: 'left', size: 6, animOptions: { duration: 'ease-in-out' }, hide: true, middleLabel: LeaderLine.pathLabel('Critique Methods'), startSocketGravity: [-200, 0]}
         );
-        
     }
-    else if (window.innerWidth > 768)
+    else if (collapse == false)
     {
         rawToAif = new LeaderLine(
             raw,
@@ -76,9 +94,13 @@ function renderArrows()
             LeaderLine.pointAnchor(critique, {x: 0, y: '50%'}),
             {dash: {animation: true}, startSocket: 'bottom', endSocket: 'left', size: 6, hide: true, middleLabel: LeaderLine.pathLabel('Critique Methods')}
         );
-
     }
 
+    return collapse;
+}
+
+function renderArrows()
+{
     rawToAif.show('draw', { animOptions: { duration: 500 } });
     aifToVisualize.show('draw', { animOptions: { duration: 500 } });
     aifToAnalytics.show('draw', { animOptions: { duration: 500 } });
@@ -95,13 +117,20 @@ function removeArrows()
     aifToCritique.remove()
 }
 
-$(document).ready(function()
+$(window).on('load', function()
 {
-    collapse = renderArrows();
+    evalArrows();
+    renderArrows();
+})
 
-    window.addEventListener("resize", function ()
-    {
-        removeArrows();
-        renderArrows();
-    })
+$(window).resize(function() {
+    clearTimeout(window.resizedFinished);
+    window.resizedFinished = setTimeout(function(){
+        $(document).ready(function()
+        {
+            removeArrows();
+            evalArrows();
+            renderArrows();
+        })
+    }, 50);
 });
