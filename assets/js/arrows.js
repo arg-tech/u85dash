@@ -11,45 +11,42 @@ function evalArrows()
     collapse = false;
 
     // LeaderLine elements
-    raw = document.getElementById('view-data');
-    aif = document.getElementById('view-aif');
-    visualize = document.getElementById('visualize');
-    analytics = document.getElementById('analytics');
-    interrogate = document.getElementById('interrogate');
+    raw = document.getElementById('raw-data');
+    ova = document.getElementById('ova3');
+    argNav = document.getElementById('arg-nav');
+    aifDb = document.getElementById('aif-db');
+    achNav = document.getElementById('ach-nav');
     critique = document.getElementById('critique');
-
-    viewDataCard = document.getElementById("view-data");
-    viewAifCard = document.getElementById("view-aif");
 
     if (window.innerWidth <= 768)
     {
         // Create line
         rawToAif = new LeaderLine(
             raw,
-            LeaderLine.pointAnchor(aif, {x: '100%', y: '50%'}),
+            LeaderLine.pointAnchor(ova, {x: '100%', y: '50%'}),
             {dash: {animation: true}, startSocket: 'right', endSocket: 'right', size: 6, animOptions: { duration: 'ease-in-out' }, hide: true, middleLabel: LeaderLine.pathLabel('Convert to AIF')}
         );
 
         aifToVisualize = new LeaderLine(
-            aif,
-            LeaderLine.pointAnchor(visualize, {x: '100%', y: '50%'}),
+            ova,
+            LeaderLine.pointAnchor(argNav, {x: '100%', y: '50%'}),
             {dash: {animation: true}, startSocket: 'right', endSocket: 'right', size: 6, animOptions: { duration: 'ease-in-out' }, hide: true, middleLabel: LeaderLine.pathLabel('Visualize Arguments')}
         );
 
         aifToAnalytics = new LeaderLine(
-            aif,
-            LeaderLine.pointAnchor(analytics, {x: '0%', y: '50%'}),
-            {dash: {animation: true}, startSocket: 'left', endSocket: 'left', size: 6, animOptions: { duration: 'ease-in-out' }, hide: true, middleLabel: LeaderLine.pathLabel('Perform Analysis')}
+            ova,
+            LeaderLine.pointAnchor(aifDb, {x: '0%', y: '50%'}),
+            {dash: {animation: true}, startSocket: 'left', endSocket: 'left', size: 6, animOptions: { duration: 'ease-in-out' }, hide: true, middleLabel: LeaderLine.pathLabel('Data Curation')}
         );
 
         aifToInterrogate = new LeaderLine(
-            aif,
-            LeaderLine.pointAnchor(interrogate, {x: '100%', y: '50%'}),
-            {dash: {animation: true}, startSocket: 'right', endSocket: 'right', size: 6, animOptions: { duration: 'ease-in-out' }, hide: true, middleLabel: LeaderLine.pathLabel('Interrogate Hypothesis'), startSocketGravity: [200, 0]}
+            ova,
+            LeaderLine.pointAnchor(achNav, {x: '100%', y: '50%'}),
+            {dash: {animation: true}, startSocket: 'right', endSocket: 'right', size: 6, animOptions: { duration: 'ease-in-out' }, hide: true, middleLabel: LeaderLine.pathLabel('Interrogate Hypotheses'), startSocketGravity: [200, 0]}
         );
 
         aifToCritique = new LeaderLine(
-            aif,
+            ova,
             LeaderLine.pointAnchor(critique, {x: '0%', y: '50%'}),
             {dash: {animation: true}, startSocket: 'left', endSocket: 'left', size: 6, animOptions: { duration: 'ease-in-out' }, hide: true, middleLabel: LeaderLine.pathLabel('Critique Methods'), startSocketGravity: [-200, 0]}
         );
@@ -58,30 +55,30 @@ function evalArrows()
     {
         rawToAif = new LeaderLine(
             raw,
-            LeaderLine.pointAnchor(aif, {x: 0, y: '50%'}),
+            LeaderLine.pointAnchor(ova, {x: 0, y: '50%'}),
             {dash: {animation: true}, startSocket: 'right', endSocket: 'left', size: 6, animOptions: { duration: 'ease-in-out' }, hide: true, middleLabel: LeaderLine.pathLabel('Convert to AIF')}
         );
     
         aifToVisualize = new LeaderLine(
-            aif,
-            LeaderLine.pointAnchor(visualize, {x: 0, y: '50%'}),
+            ova,
+            LeaderLine.pointAnchor(argNav, {x: 0, y: '50%'}),
             {dash: {animation: true}, startSocket: 'top', endSocket: 'left', size: 6, hide: true, middleLabel: LeaderLine.pathLabel('Visualise Arguments')}
         );
     
         aifToAnalytics = new LeaderLine(
-            LeaderLine.pointAnchor(aif, {x: '100%', y: '25%'}),
-            LeaderLine.pointAnchor(analytics, {x: 0, y: '50%'}),
-            {dash: {animation: true}, startSocket: 'right', endSocket: 'left', size: 6, hide: true, middleLabel: LeaderLine.pathLabel('Perform Analysis')}
+            LeaderLine.pointAnchor(ova, {x: '100%', y: '25%'}),
+            LeaderLine.pointAnchor(aifDb, {x: 0, y: '50%'}),
+            {dash: {animation: true}, startSocket: 'right', endSocket: 'left', size: 6, hide: true, middleLabel: LeaderLine.pathLabel('Data Curation')}
         );
     
         aifToInterrogate = new LeaderLine(
-            LeaderLine.pointAnchor(aif, {x: '100%', y: '80%'}),
-            LeaderLine.pointAnchor(interrogate, {x: 0, y: '50%'}),
-            {dash: {animation: true}, startSocket: 'right', endSocket: 'left', size: 6, hide: true, middleLabel: LeaderLine.pathLabel('Interrogate Hypothesis')}
+            LeaderLine.pointAnchor(ova, {x: '100%', y: '80%'}),
+            LeaderLine.pointAnchor(achNav, {x: 0, y: '50%'}),
+            {dash: {animation: true}, startSocket: 'right', endSocket: 'left', size: 6, hide: true, middleLabel: LeaderLine.pathLabel('Interrogate Hypotheses')}
         );
     
         aifToCritique = new LeaderLine(
-            aif,
+            ova,
             LeaderLine.pointAnchor(critique, {x: 0, y: '50%'}),
             {dash: {animation: true}, startSocket: 'bottom', endSocket: 'left', size: 6, hide: true, middleLabel: LeaderLine.pathLabel('Critique Methods')}
         );
