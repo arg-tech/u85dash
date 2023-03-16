@@ -23,15 +23,6 @@ function evalArrows()
 
     if (window.innerWidth <= 768)
     {
-        collapse = true;
-    }
-    else
-    {
-        collapse = false;
-    }
-
-    if (collapse == true)
-    {
         // Create line
         rawToAif = new LeaderLine(
             raw,
@@ -126,11 +117,8 @@ $(window).on('load', function()
 $(window).resize(function() {
     clearTimeout(window.resizedFinished);
     window.resizedFinished = setTimeout(function(){
-        $(document).ready(function()
-        {
             removeArrows();
             evalArrows();
             renderArrows();
-        })
-    }, 50);
+    }, 200);
 });
