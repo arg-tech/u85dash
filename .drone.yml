@@ -1,0 +1,73 @@
+# This is the main file which is run by drone when a git action is used.
+# With this file, when pushes are made to the `master` branch, drone will build a docker image
+# and store it in a private registry. It will then trigger a remote server to pull the docker image
+# and deploy it.
+
+###########################
+# Pipeline steps and info #
+###########################
+
+# Defines what type of drone operation we are running
+kind: pipeline
+type: docker
+name: deploy
+
+# Defines what will trigger the drone operation
+trigger:
+  branches:
+    - master
+
+# Defines the steps in the drone operation
+steps:
+  # Build the docker image and store in registry
+  - name: build
+    image: plugins/docker
+    settings:
+      insecure: true
+      repo: 178.79.188.16:5000/${DRONE_REPO}
+      registry: 178.79.188.16:5000
+        
+  # Use ssh to pull docker image
+  - name: pull
+    image: appleboy/drone-ssh
+    settings:
+      host:
+        - 212.71.250.173
+      username: cameron
+      key:
+        from_secret: ssh_key
+      script: |
+        docker image pull 178.79.188.16:5000/${DRONE_REPO}
+  
+  # Re-deploy docker image
+  - name: deploy
+    image: appleboy/drone-ssh
+    settings:
+      host:
+        - 212.71.250.173
+      username: cameron
+      key:
+        from_secret: ssh_key
+      script: |
+        docker rm -f server &&
+        docker run -d --publish 80:80 --name server 178.79.188.16:5000/${DRONE_REPO}
+
+---
+
+####################
+# Secrets and auth #
+####################
+
+# Get ssh key for remote server
+kind: secret
+name: ssh_key
+get:
+  path: secret/data/server/name
+  name: ssh_key
+
+# Get registry auth token
+#kind: secret
+#name: registry_auth
+#get:
+#  path: secret/data/auth
+#  name: registry
